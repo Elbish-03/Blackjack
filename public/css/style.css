@@ -1,0 +1,84 @@
+body {
+    background-color: #303030;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0066cc;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+a:hover {
+    background-color: #0052a3;
+}
+
+
+/* Styling for Blackjack Rules section */
+
+#blackjack-rules {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 60px;
+    height: 100vh;
+}
+
+#blackjack-rules h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#blackjack-rules h2 {
+    color: #00cc66;
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+/* Rest of the CSS styles */
+
+#blackjack-rules p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+#blackjack-rules p:last-child {
+    margin-bottom: 0;
+}
+
+#blackjack-rules p::before {
+    content: "\2022";
+    color: #00cc66;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+#blackjack-rules p::marker {
+    content: none;
+}

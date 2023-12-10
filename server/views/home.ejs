@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>HomePage</title>
+    <nav id="nav"></nav>
+
+    <% if (typeof loginMessage !== 'undefined') { %>
+    <script>
+      // Wait for the DOM to be loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the nav-login element by ID
+        const navLogin = document.getElementById("nav-login");
+
+        // Remove the nav-login element if it exists
+        if (navLogin) {
+          navLogin.remove();
+        }
+
+        // Create the playLink element
+        const playLink = document.createElement("a");
+        playLink.href = "/linktoplay";
+        playLink.id = "play-nav";
+        playLink.textContent = "PLAY";
+
+        // Get the existing nav element by ID
+        const navElement = document.getElementById("nav");
+
+        // Append the playLink element to the nav element
+        if (navElement) {
+          navElement.appendChild(playLink);
+        }
+      });
+    </script>
+    <% } else { %>
+    <script>
+      // Wait for the DOM to be loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Create the navLogin element
+        const navLogin = document.createElement("a");
+        navLogin.href = "/linktoaccount";
+        navLogin.id = "nav-login";
+        navLogin.textContent = "LOGIN / REGISTER";
+
+        // Get the existing nav element by ID
+        const navElement = document.getElementById("nav");
+
+        // Append the navLogin element to the nav element
+        if (navElement) {
+          navElement.appendChild(navLogin);
+        }
+      });
+    </script>
+    <% } %>
+  </head>
+  <body>
+    <div id="blackjack-rules">
+      <h1>BlackJack Rules</h1>
+      <h2>CARD VALUES</h2>
+      <p>
+        Blackjack is a card game that pits players versus dealer. It is played
+        with one or more decks of cards. Cards are counted as their respective
+        numbers (2 – 10), face cards as ten (jack, queen and king) and ace (A)
+        as either eleven or one.
+      </p>
+      <h2>WINNER, WINNER, CHICKEN DINNER</h2>
+      <p>
+        The object of Blackjack is to beat the dealer. This can be accomplished
+        by getting Blackjack (first two cards equal 21) without the dealer
+        getting a Blackjack. By having your final card count be higher than the
+        dealers without exceeding 21, or by not exceeding 21 and the dealer
+        busting by exceeding their card count of 21 (Dealer card count &gt; 21).
+      </p>
+      <h2>GAMEPLAY</h2>
+      <p>
+        In Blackjack the player must decide what to bet before the hand. Click
+        the chips to add them to your bet. Click the chip again to remove it
+        back to your pile of money. Once you click "HIT" your bet is set, and
+        two cards are dealt to the player face up and two cards are dealt to the
+        dealer, one face up and one face down. You must then decide if you will
+        "HIT" (take another card from the deck), "STAND" (keep the hand you are
+        dealt), or "DOUBLE" (you double your bet and are given only one more
+        card). If the dealer has an Ace showing, you can click the "INSURANCE"
+        button (this means you will place a bet worth half your hand bet, which
+        will be paid out if the dealer has Blackjack but will be taken if the
+        dealer does not). When you click on “SPLIT”, you split two identical
+        starting cards into two hands. This gives you the opportunity to turn
+        what was originally an unfavorable starting hand into two games of
+        (hopefully) better odds.
+      </p>
+      <h2>BLACKJACK HAND OUTCOMES</h2>
+      <p>
+        Once the Blackjack hand is played out, three outcomes can occur. First
+        you can win (as previously described), secondly you can lose (bust hand
+        or have less than dealer hand), or you can push (have same hand - number
+        count or Blackjack - as dealer). If you win, you get your bet money back
+        PLUS that same amount from the dealer, YAY! If you win with Blackjack,
+        you get your original bet back PLUS you win 1.5 times your bet from the
+        dealer, WOOHOO! If you lose, the dealer takes your bet money. If you
+        push, you keep your bet money but do not win anything additional.
+      </p>
+    </div>
+  </body>
+</html>

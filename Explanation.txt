@@ -1,0 +1,41 @@
+Deck Initialization (GenerateDeck):
+
+Creates a standard deck of playing cards with four suits (hearts, diamonds, clubs, spades) and thirteen values (2 to 10, J, Q, K, A).
+Populates the cardStack array with card objects containing type and value information.
+Deck Shuffling (SchuffleDeck):
+
+Implements the Fisher-Yates algorithm to shuffle the deck randomly.
+Dealing Cards (DealCards):
+
+Deals two cards each to the player (playerCards and player2Cards) and the dealer (dealerCards) by popping cards from the shuffled cardStack.
+Update Displayed Cards (UpdateCards):
+
+Updates the HTML elements displaying the cards for the dealer, player 1, and player 2.
+Hit and Stand Buttons (Hit and Stand functions):
+
+Hit: Adds a card from the deck to the player's hand and updates the display.
+Stand: Player decides not to take additional cards.
+Next Turn (NextTurn):
+
+Initiates the next turn, updating the display and making decisions for player 2 and the dealer.
+Player 2 Decision (Player2Decision):
+
+If the total value of player 2's cards is less than 17, player 2 takes an additional card.
+Dealer Decision (DealerDecision):
+
+If the total value of the dealer's cards is less than 21 and at least one player has a higher total value, the dealer takes an additional card.
+Check for Winners (checkWinners):
+
+Compares the total values of player 1, player 2, and the dealer to determine the winner or if it's a tie.
+Score Management (WinScore and LoseScore):
+
+Updates the game score based on whether the player wins or loses.
+Card Value Calculation (CheckSum):
+
+Calculates the total value of a hand, considering special rules for face cards (K, Q, J) and the option for the Ace to count as 11 or 1 depending on the context.
+Game Restart (Restart):
+
+Resets the game by clearing card arrays, generating a new deck, shuffling it, dealing cards, and updating the display.
+Fetching Game Data (fetch("/game-data")):
+
+Retrieves game data (likely previous games won and lost) from a server and updates the displayed values.

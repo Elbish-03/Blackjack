@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/game.css" />
+    <title>Blackjack | Play</title>
+  </head>
+
+  <body onload="checkDeposit()" id="body">
+    <nav id="nav"><a href="/" id="nav-login">HOME</a></nav>
+    <h1>BlackJack</h1>
+    <div class="container">
+      <div class="dealer">
+        <h2>Dealer</h2>
+        <p id="dealerText"></p>
+        <p id="dealerStatus"></p>
+      </div>
+      <div class="player1">
+        <h2>You (Player1)</h2>
+        <p id="p1Text"></p>
+        <p id="p1Status"></p>
+      </div>
+      <div class="player2">
+        <h2>Player 2</h2>
+        <p id="p2Text"></p>
+        <p id="p2Status"></p>
+      </div>
+    </div>
+    <button id="hit" onclick="Hit()">Hit!</button>
+    <button id="stand" onclick="Stand()">Stand!</button>
+    <button id="endturn" onclick="checkWinners()">End turn!</button>
+    <button id="endturn" onclick="Restart()">Restart!</button>
+    <h3>Games Won</h3>
+    <p id="gamesWon"></p>
+    <h3>Games Lost</h3>
+    <p id="gamesLost"></p>
+
+    <h3>Einsatz</h3>
+    <p id="money">0</p>
+    <script src="/game.js"></script>
+    <script>
+      function startGame() {
+        document.getElementById("body").style.display = "block";
+        // Your existing game logic goes here
+      }
+
+      function checkDeposit() {
+        var depoValue = parseInt(document.getElementById("money").innerHTML);
+
+        if (depoValue > 0) {
+          startGame();
+        } else {
+          var einsaetz = prompt("Einsatz ?");
+
+          if (einsaetz && einsaetz >= 1) {
+            document.getElementById("money").innerHTML = einsaetz;
+
+            var zahlung = prompt(
+              "How do you want to Pay! Twint => T || Credit Card == C"
+            );
+
+            if (zahlung == "T" || zahlung == "C") {
+              alert("Thanks for Paying! Enjoy the Game. Press OK to continue");
+              startGame();
+            } else {
+              alert("Please Pay at first");
+            }
+          } else {
+            alert("Please enter a valid deposit amount.");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
